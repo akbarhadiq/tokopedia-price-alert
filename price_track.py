@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 import smtplib
 
+# create your own env
 load_dotenv("mail.env")
 my_email = os.getenv("MY_EMAIL")
 smtp = os.getenv("SMTP")
@@ -38,4 +39,4 @@ def send_warning(low_price):
 
 if price <= warning_price:
     send_warning(price)
-    warning_price = price
+    warning_price = price  # probably should keep this on a .txt file
